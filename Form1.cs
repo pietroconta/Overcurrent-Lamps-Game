@@ -1,0 +1,105 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace giocodellelampadine
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void lbl_1_MouseHover(object sender, EventArgs e)
+        {
+            lbl_1.ForeColor = Color.Yellow;
+            lbl_2.ForeColor = Color.Black;
+            lbl_3.ForeColor = Color.Black;
+
+            label4.ForeColor = Color.Yellow;
+            label5.ForeColor = Color.White;
+            label7.ForeColor = Color.White;
+        }
+
+        private void lbl_2_MouseHover(object sender, EventArgs e)
+        {
+            lbl_1.ForeColor = Color.Black;
+            lbl_2.ForeColor = Color.Yellow;
+            lbl_3.ForeColor = Color.Black;
+
+            label4.ForeColor = Color.White;
+            label5.ForeColor = Color.Yellow;
+            label7.ForeColor = Color.White;
+        }
+
+        private void lbl_3_MouseHover(object sender, EventArgs e)
+        {
+            lbl_1.ForeColor = Color.Black;
+            lbl_2.ForeColor = Color.Black;
+            lbl_3.ForeColor = Color.Red;
+
+            label4.ForeColor = Color.White;
+            label5.ForeColor = Color.White;
+            label7.ForeColor = Color.Red;
+        }
+
+        private void label4_MouseHover(object sender, EventArgs e)
+        {
+            lbl_1.ForeColor = Color.Yellow;
+            lbl_2.ForeColor = Color.Black;
+            lbl_3.ForeColor = Color.Black;
+
+            label4.ForeColor = Color.Yellow;
+            label5.ForeColor = Color.White;
+            label7.ForeColor = Color.White;
+        }
+
+        private void label5_MouseHover(object sender, EventArgs e)
+        {
+            lbl_1.ForeColor = Color.Black;
+            lbl_2.ForeColor = Color.Yellow;
+            lbl_3.ForeColor = Color.Black;
+
+            label4.ForeColor = Color.White;
+            label5.ForeColor = Color.Yellow;
+            label7.ForeColor = Color.White;
+        }
+
+        private void label7_MouseHover(object sender, EventArgs e)
+        {
+            lbl_1.ForeColor = Color.Black;
+            lbl_2.ForeColor = Color.Black;
+            lbl_3.ForeColor = Color.Red;
+
+            label4.ForeColor = Color.White;
+            label5.ForeColor = Color.White;
+            label7.ForeColor = Color.Red;
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+            gioca gioca = new gioca();
+            gioca.Show();
+            this.Hide();
+        }
+
+        private void lbl_1_Click(object sender, EventArgs e)
+        {
+            gioca gioca = new gioca();
+            gioca.Show();
+            this.Hide();
+        }
+
+        private void lbl_close_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+    }
+}
