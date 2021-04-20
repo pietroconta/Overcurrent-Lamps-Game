@@ -78,6 +78,11 @@ namespace giocodellelampadine
                             tab_data.Rows[r].Cells[c].Style.ForeColor = Color.Yellow;
                         else
                             tab_data.Rows[r].Cells[c].Style.ForeColor = Color.White;
+                    }
+
+                    else 
+                            tab_data.Rows[r].Cells[c].Value = "💡";
+                    
 
                         if (diff == 1)
                         {
@@ -97,10 +102,8 @@ namespace giocodellelampadine
                         }
 
 
-                    }
+                    
 
-                    else
-                        tab_data.Rows[r].Cells[c].Value = "💡";
 
                 }
                 }

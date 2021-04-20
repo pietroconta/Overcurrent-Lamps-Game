@@ -137,7 +137,7 @@ namespace giocodellelampadine
             this.pbl_inizia.Controls.Add(this.rb_normale);
             this.pbl_inizia.Controls.Add(this.button1);
             this.pbl_inizia.Controls.Add(this.rb_random);
-            this.pbl_inizia.Location = new System.Drawing.Point(138, 175);
+            this.pbl_inizia.Location = new System.Drawing.Point(143, 184);
             this.pbl_inizia.Name = "pbl_inizia";
             this.pbl_inizia.Size = new System.Drawing.Size(229, 161);
             this.pbl_inizia.TabIndex = 8;
