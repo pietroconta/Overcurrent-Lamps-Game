@@ -17,6 +17,8 @@ namespace giocodellelampadine
             InitializeComponent();
         }
 
+        public static int diff = 1;
+
         private void lbl_1_MouseHover(object sender, EventArgs e)
         {
             lbl_1.ForeColor = Color.Yellow;
@@ -100,6 +102,30 @@ namespace giocodellelampadine
         private void lbl_close_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+            diff = 2;
+            label6.ForeColor = Color.Yellow;
+            label8.ForeColor = Color.Yellow;
+            label9.ForeColor = Color.White;
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+            diff = 1;
+            label6.ForeColor = Color.Yellow;
+            label8.ForeColor = Color.White;
+            label9.ForeColor = Color.White;
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+            diff = 3;
+            label6.ForeColor = Color.Yellow;
+            label8.ForeColor = Color.Yellow;
+            label9.ForeColor = Color.Yellow;
         }
     }
 }
