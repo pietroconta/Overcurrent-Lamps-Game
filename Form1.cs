@@ -18,6 +18,7 @@ namespace giocodellelampadine
         }
 
         public static int diff = 1;
+        Point lastpoint;
 
         private void lbl_1_MouseHover(object sender, EventArgs e)
         {
@@ -126,6 +127,29 @@ namespace giocodellelampadine
             label6.ForeColor = Color.Yellow;
             label8.ForeColor = Color.Yellow;
             label9.ForeColor = Color.Yellow;
+        }
+
+        private void panel1_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+
+
+                this.Left += e.X - lastpoint.X;
+                this.Top += e.Y - lastpoint.Y;
+
+
+            }
+        }
+
+        private void panel1_MouseDown(object sender, MouseEventArgs e)
+        {
+            lastpoint = new Point(e.X, e.Y);
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

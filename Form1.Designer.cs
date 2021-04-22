@@ -76,6 +76,8 @@ namespace giocodellelampadine
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(408, 20);
             this.panel1.TabIndex = 2;
+            this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
+            this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
             // 
             // lbl_close
             // 
@@ -125,6 +127,7 @@ namespace giocodellelampadine
             this.label5.Size = new System.Drawing.Size(103, 44);
             this.label5.TabIndex = 6;
             this.label5.Text = "Regole";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             this.label5.MouseHover += new System.EventHandler(this.label5_MouseHover);
             // 
             // lbl_2

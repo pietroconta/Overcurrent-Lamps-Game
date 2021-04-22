@@ -29,8 +29,9 @@ namespace giocodellelampadine
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lbl_close = new System.Windows.Forms.Label();
             this.tab_data = new System.Windows.Forms.DataGridView();
@@ -38,6 +39,8 @@ namespace giocodellelampadine
             this.rb_normale = new System.Windows.Forms.RadioButton();
             this.button1 = new System.Windows.Forms.Button();
             this.pbl_inizia = new System.Windows.Forms.Panel();
+            this.btn_menu = new System.Windows.Forms.Button();
+            this.lbl_vittoria = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tab_data)).BeginInit();
             this.pbl_inizia.SuspendLayout();
@@ -51,6 +54,8 @@ namespace giocodellelampadine
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(524, 20);
             this.panel1.TabIndex = 3;
+            this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
+            this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
             // 
             // lbl_close
             // 
@@ -66,32 +71,41 @@ namespace giocodellelampadine
             // 
             // tab_data
             // 
+            this.tab_data.AllowUserToAddRows = false;
+            this.tab_data.AllowUserToDeleteRows = false;
+            this.tab_data.AllowUserToOrderColumns = true;
+            this.tab_data.AllowUserToResizeColumns = false;
+            this.tab_data.AllowUserToResizeRows = false;
             this.tab_data.BackgroundColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ButtonFace;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.tab_data.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.ButtonFace;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tab_data.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.tab_data.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tab_data.ColumnHeadersVisible = false;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.tab_data.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.25F);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.tab_data.DefaultCellStyle = dataGridViewCellStyle5;
             this.tab_data.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.tab_data.Location = new System.Drawing.Point(33, 62);
             this.tab_data.Name = "tab_data";
             this.tab_data.RowHeadersVisible = false;
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
+            this.tab_data.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.tab_data.Size = new System.Drawing.Size(457, 445);
             this.tab_data.TabIndex = 4;
             this.tab_data.Visible = false;
+            this.tab_data.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tab_data_CellClick);
+            this.tab_data.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tab_data_CellContentClick);
             // 
             // rb_random
             // 
@@ -142,12 +156,40 @@ namespace giocodellelampadine
             this.pbl_inizia.Size = new System.Drawing.Size(229, 161);
             this.pbl_inizia.TabIndex = 8;
             // 
+            // btn_menu
+            // 
+            this.btn_menu.BackColor = System.Drawing.Color.Yellow;
+            this.btn_menu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_menu.Font = new System.Drawing.Font("Monotype Corsiva", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_menu.Location = new System.Drawing.Point(428, 534);
+            this.btn_menu.Name = "btn_menu";
+            this.btn_menu.Size = new System.Drawing.Size(75, 28);
+            this.btn_menu.TabIndex = 8;
+            this.btn_menu.Text = "Menu";
+            this.btn_menu.UseVisualStyleBackColor = false;
+            this.btn_menu.Visible = false;
+            this.btn_menu.Click += new System.EventHandler(this.btn_menu_Click);
+            // 
+            // lbl_vittoria
+            // 
+            this.lbl_vittoria.AutoSize = true;
+            this.lbl_vittoria.Font = new System.Drawing.Font("Monotype Corsiva", 45F, System.Drawing.FontStyle.Italic);
+            this.lbl_vittoria.ForeColor = System.Drawing.Color.Yellow;
+            this.lbl_vittoria.Location = new System.Drawing.Point(131, 498);
+            this.lbl_vittoria.Name = "lbl_vittoria";
+            this.lbl_vittoria.Size = new System.Drawing.Size(285, 72);
+            this.lbl_vittoria.TabIndex = 8;
+            this.lbl_vittoria.Text = "Hai vinto!!!";
+            this.lbl_vittoria.Visible = false;
+            // 
             // gioca
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ClientSize = new System.Drawing.Size(515, 563);
+            this.ClientSize = new System.Drawing.Size(515, 577);
+            this.Controls.Add(this.lbl_vittoria);
+            this.Controls.Add(this.btn_menu);
             this.Controls.Add(this.pbl_inizia);
             this.Controls.Add(this.tab_data);
             this.Controls.Add(this.panel1);
@@ -161,6 +203,7 @@ namespace giocodellelampadine
             this.pbl_inizia.ResumeLayout(false);
             this.pbl_inizia.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -173,5 +216,7 @@ namespace giocodellelampadine
         private System.Windows.Forms.RadioButton rb_normale;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel pbl_inizia;
+        private System.Windows.Forms.Button btn_menu;
+        private System.Windows.Forms.Label lbl_vittoria;
     }
 }
